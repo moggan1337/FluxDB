@@ -117,6 +117,38 @@ pytest tests/ -v
 python examples/basic_usage.py
 ```
 
+## 🎯 Use Cases
+
+FluxDB is designed for various use cases:
+
+### 1. Event-Driven Architecture
+Perfect for event-driven microservices where events are the source of truth:
+- Audit trails
+- Financial transactions
+- User activity tracking
+- IoT data pipelines
+
+### 2. Collaborative Applications
+CRDTs enable real-time collaboration without conflicts:
+- Collaborative documents
+- Shared shopping carts
+- Multiplayer games
+- Distributed counters
+
+### 3. Time-Series Data
+Time-travel queries make it ideal for time-series:
+- Sensor data
+- Stock prices
+- Application metrics
+- User behavior analytics
+
+### 4. Distributed Systems
+Raft consensus provides strong consistency:
+- Configuration stores
+- Service discovery
+- Distributed locks
+- Coordination services
+
 ## 📚 Documentation
 
 ### Quick Start
@@ -628,9 +660,46 @@ MIT License - see LICENSE file for details.
 - CRDT implementations based on research by Shapiro et al.
 - Raft implementation based on Ongaro & Ousterhout's paper
 
+## 📚 Appendix
+
+### A. Terminology
+
+| Term | Description |
+|------|-------------|
+| Append-Only | Storage where data is never modified, only added |
+| Event Sourcing | Pattern where state changes are stored as events |
+| CRDT | Conflict-free Replicated Data Type |
+| Aggregate | Consistency boundary in event sourcing |
+| Projection | Derived read model from events |
+| Raft | Consensus algorithm for distributed systems |
+| Watermark | Threshold for processing time-based windows |
+
+### B. Performance Considerations
+
+1. **Segment Size**: Choose based on workload (128MB default)
+2. **fsync**: Enable for durability, disable for speed
+3. **Compaction**: Run periodically to reclaim space
+4. **Snapshots**: Create for faster recovery
+
+### C. Limitations
+
+- Single-node version lacks distributed coordination
+- No query language (use projections for read models)
+- Eventual consistency in async replication mode
+
+### D. Future Roadmap
+
+- [ ] HTTP/REST API server
+- [ ] GraphQL interface
+- [ ] SQL-like query language
+- [ ] Multi-datacenter replication
+- [ ] Automatic partition rebalancing
+- [ ] Streaming SQL (Flink-style)
+
 ## 🔗 Links
 
 - [Documentation](https://github.com/moggan1337/FluxDB/wiki)
 - [API Reference](https://github.com/moggan1337/FluxDB/wiki/API-Reference)
 - [Examples](https://github.com/moggan1337/FluxDB/tree/main/examples)
 - [Issue Tracker](https://github.com/moggan1337/FluxDB/issues)
+- [Changelog](https://github.com/moggan1337/FluxDB/blob/main/CHANGELOG.md)
