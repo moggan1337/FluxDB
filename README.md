@@ -1,4 +1,22 @@
 # FluxDB - Append-Only Distributed Database
+## 🎬 Demo
+![FluxDB Demo](demo.gif)
+
+*Append-only storage with CRDT conflict resolution*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Event Log | ![log](screenshots/event-log.png) |
+| CRDT Merge | ![merge](screenshots/crdt-merge.png) |
+| Cluster Status | ![cluster](screenshots/cluster.png) |
+
+## Visual Description
+Event log shows immutable records being appended with hash chains. CRDT merge displays concurrent operations being resolved. Cluster status presents distributed nodes with Raft leadership.
+
+---
+
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-0.1.0-blue.svg" alt="Version">
